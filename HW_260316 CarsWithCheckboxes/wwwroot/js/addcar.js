@@ -11,7 +11,7 @@
             return;
         }
 
-        if (selectedCarType === "2") {
+        else if (selectedCarType === "2") {
             $("#has-leather-seats").prop("checked", true);
             $("#has-leather-seats").prop("disabled", true);
             $("form").append("<input type='hidden' id='chk-hidden' value='true' name='hasleatherseats' />");
