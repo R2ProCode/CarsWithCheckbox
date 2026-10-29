@@ -21,11 +21,11 @@ namespace HW_260316_CarsWithCheckboxes.Controllers
                 viewModel.CurrentSort = "asc";
                 return View(viewModel);
             }
-            if (sort == "asc")
+            else if (sort == "asc")
             {
                 viewModel.Cars = cars.OrderBy(c => c.Year).ThenBy(c => c.Price).ToList();
             }
-            if (sort == "desc")
+            else if (sort == "desc")
             {
                 viewModel.Cars = cars.OrderByDescending(c => c.Year).ThenByDescending(c => c.Price).ToList();
             }
