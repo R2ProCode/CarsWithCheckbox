@@ -29,3 +29,31 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+.card {
+    background: #1f2937;
+    color: white;
+}
+
+.table-dark {
+    --bs-table-bg: #1f2937;
+    --bs-table-hover-bg: #2c3a4d;
+}
+
+.table thead th {
+    border-bottom: 2px solid #495057;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+.table tbody tr {
+    transition: all .2s ease;
+}
+
+    .table tbody tr:hover {
+        transform: translateY(-1px);
+    }
+
+.badge {
+    padding: .55em .9em;
+}
