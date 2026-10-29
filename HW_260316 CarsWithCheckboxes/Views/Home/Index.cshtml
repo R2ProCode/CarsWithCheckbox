@@ -1,8 +1,45 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using HW_260316_CarsWithCheckboxes
+@model DisplayCarsViewModel
+
+@{
+	ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<div class="container">
+	<div class="row mt-5">
+		<div class="col-md-12">
+			<h1>Cars List</h1>
+			<table class="table table-hover table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Make</th>
+						<th>Model</th>
+						<th>
+							Year
+							<a class="btn btn-dark rounded-pill btn-sm ms-2"
+							   id="sort"
+							   href="/home/index?sort=@(Model.CurrentSort == "asc" ? "desc" : "asc")"/>
+								<i class="@(Model.CurrentSort == "asc" ? "bi bi-sort-up" : "bi bi-sort-down")"></i>
+							</a>
+						</th>
+						<th>Price</th>
+						<th>Car Type</th>
+						<th>Has Leather Seats</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var car in Model.Cars)
+					{
+						<tr>
+							<td>@car.Make</td>
+							<td>@car.Model</td>
+							<td>@car.Year</td>
+							<td>@car.Price.ToString("C")</td>
+							<td>@car.CarType.ToString()</td>
+							<td>@(car.HasLeatherSeats ? "Yes" : "No")</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>

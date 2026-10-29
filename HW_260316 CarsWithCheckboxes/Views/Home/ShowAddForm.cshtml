@@ -1,0 +1,79 @@
+﻿<body style="background-color: #f3f5f7;">
+
+	<div class="container">
+		<div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+
+			<div class="col-lg-6 col-md-8 col-sm-10">
+
+				<div class="card shadow border-0 rounded-4">
+
+					<div class="card-header text-white text-center py-4 rounded-top-4"
+						 style="background: linear-gradient(135deg, #5b6780, #7a869e);">
+						<h2 class="mb-0 fw-semibold">Add Car</h2>
+					</div>
+
+					<div class="card-body p-5">
+
+						<form method="post" action="/home/addcar">
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="make" name="make" placeholder="Make" />
+								<label for="make">Make</label>
+							</div>
+
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="model" name="model" placeholder="Model" />
+								<label for="model">Model</label>
+							</div>
+
+							<div class="form-floating mb-3">
+								<input type="number" class="form-control" id="year" name="year" placeholder="Year" min="1990" max="2028" step="1" />
+								<label for="year">Year</label>
+							</div>
+
+							<div class="form-floating mb-3">
+								<input type="number" class="form-control" id="price" name="price" placeholder="Price" min="5000" step="1000" />
+								<label for="price">Price</label>
+							</div>
+
+							<select class="form-select" name="cartype" id="car-type">
+								<option value="-1">-- Choose Car Type --</option>
+								<option value="0">Sedan</option>
+								<option value="1">SUV</option>
+								<option value="2">Supercar</option>
+							</select>
+
+							<div class="form-check form-switch mb-2 mt-3">
+								<input class="form-check-input"
+									   type="checkbox"
+									   value="true"
+									   id="has-leather-seats"
+									   name="hasLeatherSeats">
+
+								<label class="form-check-label"
+									   for="hasLeatherSeats">
+									Has Leather Seats
+								</label>
+							</div>
+
+							<div class="d-grid">
+								<button id="add-car-button"
+										disabled
+										type="submit"
+										class="btn btn-lg text-white rounded-3 mt-3"
+										style="background-color:#5b6780; border:none;">
+									Add Car
+								</button>
+							</div>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+</body>
